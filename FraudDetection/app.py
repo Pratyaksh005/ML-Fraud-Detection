@@ -5,7 +5,8 @@ import joblib
 
 from config import MODEL_PATH, FRAUD_THRESHOLD
 from data_loader import ensure_dataset_exists
-from train import main as train_model   # 👈 reuse training logic
+from data_validation import prepare_processed_data
+from train import main as train_model
 
 st.set_page_config(
     page_title="Fraud Detection System",
@@ -17,9 +18,10 @@ st.title("🚨 Fraud Detection System")
 st.write("Live ML-based fraud detection demo")
 
 # -------------------------
-# Ensure data + model exist
+# Ensure data & model exist
 # -------------------------
 ensure_dataset_exists()
+prepare_processed_data()
 
 if not MODEL_PATH.exists():
     st.info("Training model for the first time. This may take a minute...")
@@ -30,6 +32,7 @@ def load_model():
     return joblib.load(MODEL_PATH)
 
 model = load_model()
+
 
 # -------------------------
 # User Inputs
