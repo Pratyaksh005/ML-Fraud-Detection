@@ -173,14 +173,14 @@ pip install -r requirements.txt
 ### 4. Run the Pipeline
 
 ``` bash
-python src/data_validation.py
-python src/train.py
+python data_validation.py
+python train.py
 ```
 
 ### 5. Launch Live App
 
 ``` bash
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
 ------------------------------------------------------------------------
