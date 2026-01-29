@@ -1,0 +1,13 @@
+# Data files
+data/
+
+# Trained models
+models/
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
